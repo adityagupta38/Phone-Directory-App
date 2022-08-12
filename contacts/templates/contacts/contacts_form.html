@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+<style>
+    #center{
+        alignment: center;
+        text-align: center;
+    }
+    form p label{
+         font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        padding: 20px;
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body>
+{% extends 'base.html' %}
+    {% block content %}
+        <div class="container">
+        <div id="center">
+            <h2 class="alert-success">Create / Update Contact</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}<br>
+    <input type="submit" class="btn btn-lg btn-success">
+</form>
+        </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

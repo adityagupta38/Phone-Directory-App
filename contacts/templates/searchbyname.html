@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Contact</title>
+</head>
+<body>
+{% extends 'byname.html' %}
+{% block form %}
+     <form  action="/searchbyname">
+    {% csrf_token %}
+        <label  for="contactname">Name Of Contact</label>
+    <input id="contactname" type="text" name="cname" placeholder="Enter Name">
+    <input type="submit"value="Search" class="btn btn-secondary">
+    </form>
+{% endblock %}
+</body>
+</html>

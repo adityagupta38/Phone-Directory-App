@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Detail</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+    {% block content %}
+        <div class="container">
+        <div id="center">
+        {% if object %}
+            <h3 class=" alert-info">Contact Details</h3>
+            <br>
+<h6>
+    Name         :  {{ object.name }}<br>
+    Country Code :  {{ object.countryCode }}<br>
+    Contact No   :  {{ object.contactNo }}<br>
+    Email
+</h6><a style="color: #0a58ca; font-size: x-large" href="http://www.gmail.com">{{ object.email }}</a><br>
+
+        {% endif %}
+        {{ msg }}
+        </div>
+        </div>
+    {% endblock %}
+
+</body>
+</html>

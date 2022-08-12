@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'contacts/css/bootstrap.css' %}">
+    <script src="{% static 'contacts/js/bootstrap.bundle.js' %}"></script>
+    <title>Phone Directory</title>
+
+     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
+
+    <link rel="stylesheet" href="{% static 'contacts/css/style.css' %}">
+    <style>
+   #center{
+       text-align: center;
+       background-color: rgb(255, 255, 255);
+       padding: 10px;
+    }
+       form label {
+           font-family: "Arial";
+           padding: 10px;
+           color: black;
+           font-style:initial;
+           font-size: x-large;
+       }
+
+    </style>
+
+</head>
+<body style=" margin: 0%; padding:0%; background-color:rgba(100,149,237,0.69)">
+
+
+<div class="container-fullwidth">
+<div class="row row-no-gutter w-100">
+    <div class="col-sm-2 bg-white"><a class="brand-name" href="#"><img class="card-body box-width-small card-light" src="{% static 'contacts/images/PHONE DIRECTORY_logo.png' %}" alt="Logo"/></a></div>
+    <div class=" col-sm-10" ><h1 class="text-xl-center alert-primary h-100" style=""> Phone Directory</h1></div>
+</div>
+</div>
+
+<div class=" m-1 container-fluid">
+<nav class="mt-2 navbar navbar-expand-xl  nav-fill navbar-dark">
+    <div class="m-1 container-fluid">
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina " href="/">Home</a></div>
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="/create"> Create Contact </a></div>
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="{% url 'add_contact' %}"> Add Contact </a></div>
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="/updatepage">Update Contact</a></div>
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="/delpage">Delete Contact</a></div>
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="/searchpage">Search Contact</a></div>
+        <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="/">Show All Contacts</a></div>
+    </div>
+</nav>
+<br><br>
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

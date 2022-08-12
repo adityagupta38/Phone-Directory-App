@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+   table{
+          border: 2px black solid;
+       width: 100%;
+      }
+   #tabtitle{
+       text-align: center;
+   }
+ </style>
+</head>
+<body>
+{% extends 'base.html' %}
+<div class="container">
+
+{% block content %}
+    {% if object_list %}
+        <table class="table table-hover table-responsive table-dark">
+        <thead>
+        <tr><th colspan="7"><h4 class=" alert alert-info" id="tabtitle">Contacts</h4></th></tr>
+        <tr>
+            <th>Name</th>
+            <th>Country Code</th>
+            <th>Contact No</th>
+            <th>Contact Email</th>
+            <th colspan="3" style="text-align: center">Click To Perform Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in object_list %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.countryCode }}</td>
+                <td>{{ contact.contactNo }}</td>
+                <td>{{ contact.email }}</td>
+                <td><a  class="button-block" href="{% url "contact_detail"  contact.id %}">Details</a></td>
+                <td><a  class="button-block" href="{% url "update_contact"  contact.id  %}">Update</a></td>
+                <td><a class="button-block" href="{% url "delete_contact"  contact.id  %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% else %}
+        <div id="center">
+        <h2 class="alert alert-dark" style="margin-top: 20%; text-align: center; font-family: 'Helvetica Neue, Helvetica, Arial, sans-serif'">No Contacts To Show</h2>
+        </div>
+{% endif%}
+
+{% endblock %}
+</div>
+</body>
+</html>

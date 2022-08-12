@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+    <div class=" container-fullwidth">
+    <br>
+    <div id="center">
+    {% if title %}
+        <h3 class="alert alert-primary">{{ title }}</h3>
+    {% endif %}<br><br>
+    {% block form %}
+
+    {% endblock %}
+<br><br>
+{% if msg %}
+    <p style="font-family: 'Arial Black'">{{ msg }}</p>
+{% endif %}
+    </div>
+    </div>
+{% endblock %}
+
+</body>
+</html>

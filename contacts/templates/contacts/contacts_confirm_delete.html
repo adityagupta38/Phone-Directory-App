@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>confirm Delete</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container;">
+<div id="center">
+    <h2 class="alert alert-danger">Confirm Delete Contact?</h2>
+
+    <br>
+<form method="post">
+    {% csrf_token %}
+
+    <input type="submit" value="Yes" class="btn btn-danger btn-lg">
+</form>
+<br>
+<form action="/">
+    <input type="submit" value="No" class="btn btn-success btn-lg">
+</form>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>
