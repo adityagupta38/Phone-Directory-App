@@ -10,4 +10,4 @@ add new contact,
 update contact,
 delete contact,
 show a give name contact,
-show all contact,
+show all contact.
