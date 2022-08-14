@@ -18,7 +18,7 @@ from django.urls import path
 from contacts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Home.as_view(), name='home'),
+    path('/Phone-Directory-App/', views.Home.as_view(), name='home'),
     path('create', views.CreateContact.as_view(), name='create_contact'),
     path('update<int:pk>', views.UpdateContact.as_view(), name='update_contact'),
     path('delete<int:pk>', views.DeleteContact.as_view(), name='delete_contact'),
